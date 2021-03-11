@@ -1,0 +1,23 @@
+---
+title: "PickAWar"
+author: "Diassa Diakite"
+date: "3/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r}
+MIDA <- read.csv("MIDA 5.0.csv")
+
+MIDB <- read.csv("MIDB 5.0.csv")
+
+NMC <- read.csv("NMC_5_0.csv")
+
+dispute <- filter(MIDA, dispnum == 4258)
+dispute2 <- filter(MIDB, dispnum == 4258)
+dispute3 <- filter(NMC, stateabb == "ETH" | stateabb == "ERI", year > 1997, year < 2001)
+```
